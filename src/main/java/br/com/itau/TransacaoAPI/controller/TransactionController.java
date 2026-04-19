@@ -40,7 +40,8 @@ public class TransactionController {
     public ResponseEntity<Void> receberViaWebDePost(@Valid @RequestBody TransactionRequest requisisaoQueVemDoBodyJSON) {
         log.debug("A porta WEB foi batida: VLR: {}, DH: {}", requisisaoQueVemDoBodyJSON.valor(), requisisaoQueVemDoBodyJSON.dataHora());
 
-        if (nossaAreaDeTrabalhoDoService.verificarSeDataENoFuturoTotalmenteInvalida(requisisaoQueVemDoBodyJSON.dataHora()));{
+
+        if (nossaAreaDeTrabalhoDoService.verificarSeDataENoFuturoTotalmenteInvalida(requisisaoQueVemDoBodyJSON.dataHora())) {
             return ResponseEntity.unprocessableEntity().build(); // ignoramos, ate pq um dev bom nao testa antes kk
         }
 
