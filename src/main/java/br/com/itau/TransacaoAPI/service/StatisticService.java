@@ -23,7 +23,7 @@ public class StatisticService {
 
     public StatisticService(
             TransactionService dServiceAche,
-            @Value("${estatistica.janela-segundos:60") long propertiesApplication) {
+            @Value("${estatistica.janela-segundos:60}") long propertiesApplication) {
 
         this.asMemoriaTransacoes = dServiceAche;
         this.propJanelaSegundaDaMatematicaConfig = propertiesApplication;

@@ -17,7 +17,7 @@ import java.math.BigDecimal;
 
 @RestController
 @RequestMapping("/transacao") // rota q o cara pediu :)
-@Tag(name = "Transações", description = "Endpoints p receber as transações") // estético rs
+@Tag(name = "transacoes", description = "Endpoints p receber as transações") // estético rs
 public class TransactionController {
 
     private static final Logger log = LoggerFactory.getLogger(TransactionController.class);
@@ -35,7 +35,7 @@ public class TransactionController {
             @ApiResponse(responseCode = "201", description = "201 é create meu truta, transação rolou"),
             @ApiResponse(responseCode = "422", description = "Seja futuro, ou negativa, a regra de negócio disse q n pode!!! = 422"),
             @ApiResponse(responseCode = "400", description = "Json cagado = 400")
-    }) // vms ignorar isso por enquanto ok?
+    }) // eu fiquei burro de uma hora pra outra.......
 
     public ResponseEntity<Void> receberViaWebDePost(@Valid @RequestBody TransactionRequest requisisaoQueVemDoBodyJSON) {
         log.debug("A porta WEB foi batida: VLR: {}, DH: {}", requisisaoQueVemDoBodyJSON.valor(), requisisaoQueVemDoBodyJSON.dataHora());

@@ -36,4 +36,5 @@ public class StatisticController {
         return ResponseEntity.ok(respostaDasAcoes);
     }
     // 3 commit :D (esquece que aquele 3 existiu, pq eu errei o 2)
+
 }
