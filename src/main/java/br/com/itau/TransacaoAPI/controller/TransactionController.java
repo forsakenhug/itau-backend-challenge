@@ -11,10 +11,7 @@ import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 
@@ -57,5 +54,16 @@ public class TransactionController {
         nossaAreaDeTrabalhoDoService.addTransaction(modeloAEnviarODataMemory);
 
         return ResponseEntity.status(201).build();
+        // primeiro commit
+    }
+
+    @DeleteMapping
+    @Operation(summary = "Exterminar as transações do passado")
+    public ResponseEntity<Void> detonarTodasAsMemoriasDeTransacoesOkkG() {
+        log.info("Entregando request de Delete.");
+        nossaAreaDeTrabalhoDoService.cleanAllMemory();
+
+        return ResponseEntity.ok().build();
+        // segundo commit
     }
 }
